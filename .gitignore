@@ -11,4 +11,5 @@ coverage
 tmp
 yarn-error.log
 dist
+example
 *.tgz

@@ -39,3 +39,19 @@ export default function App() {
    )
 }
 ```
+
+## Options
+
+The `useArrowControls` hook accepts an optional second argument which is an object of configuration props.
+
+| Prop        | Description                                | Default                                                    | Type          |
+|-------------|--------------------------------------------|------------------------------------------------------------|---------------|
+| `selectors` | Array of elements that should receive focus.      | `['a:not([disabled])', 'button:not([disabled])', 'input']` | Array\|String |
+| `useTab`    | Use tab key to traverse focusable elements. | true                                                       | Boolean       |
+| `loop`      | Loop through focusable elements.           | true                                                       | Boolean       |False    |
+
+```javascript
+const ref = useArrowControls( { 
+   focusable: ['a', 'span[role="button"]'],
+   useTab: false,
+});
