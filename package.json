@@ -1,0 +1,48 @@
+{
+  "name": "react-use-arrows",
+  "version": "0.0.2",
+  "description": "React hook for traversing DOM elements with keyboard arrow keys.",
+  "type": "module",
+  "source": "src/useArrows.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "dist/index.js",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dcooney/react-use-arrows.git"
+  },
+  "keywords": [
+    "arrows",
+    "arrow controls",
+    "up arrow",
+    "down arrow",
+    "react-hook",
+    "react"
+  ],
+  "author": "Darren Cooney (darren.cooney@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dcooney/react-use-arrows/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": ">=18.2.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  }
+}

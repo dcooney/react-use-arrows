@@ -1,29 +1,26 @@
-# use-arrow-controls
+# react-use-arrows
 
-A React hook for traversing DOM elements with arrow keys.
+A React hook for traversing DOM elements with keyboard karrow keys.
 
-[![npm](https://img.shields.io/npm/v/use-arrow-controls)](https://www.npmjs.com/package/use-arrow-controls)
+[![npm](https://img.shields.io/npm/v/react-use-arrows)](https://www.npmjs.com/package/react-use-arrows)
 
 ## Install
 
 ```bash
 # With npm
-npm i use-arrow-controls
+npm i react-use-arrows
 
 # With Yarn
-yarn add use-arrow-controls
+yarn add react-use-arrows
 ```
 
 ## Usage
 
 ```javascript
-import useArrowControls from 'use-arrow-controls'
-import { useRef } from 'react';
+import useArrows from 'react-use-arrows'
 
 export default function App() {
-   const dropdownRef = useRef();
-
-   useArrowControls(true, dropdownRef);
+   const dropdownRef = useArrows();
 
    return (
       <div ref={dropdownRef}>
