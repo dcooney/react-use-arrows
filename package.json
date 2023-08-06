@@ -1,7 +1,7 @@
 {
   "name": "react-use-arrows",
-  "version": "0.0.2",
-  "description": "React hook for traversing DOM elements with keyboard arrow keys.",
+  "version": "0.0.1",
+  "description": "React hook for traversing DOM elements with keyboard arrows.",
   "type": "module",
   "source": "src/useArrows.js",
   "exports": {
@@ -20,11 +20,16 @@
   },
   "keywords": [
     "arrows",
+    "arrow keys",
+    "keyboard arrows",
     "arrow controls",
     "up arrow",
     "down arrow",
     "react-hook",
-    "react"
+    "ref",
+    "react",
+    "up",
+    "down"
   ],
   "author": "Darren Cooney (darren.cooney@gmail.com)",
   "license": "MIT",
