@@ -1,6 +1,6 @@
 # react-use-arrows
 
-A React hook for traversing DOM elements with keyboard karrow keys.
+A React hook for traversing DOM elements with keyboard arrow keys.
 
 [![npm](https://img.shields.io/npm/v/react-use-arrows)](https://www.npmjs.com/package/react-use-arrows)
 
