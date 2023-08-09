@@ -48,6 +48,7 @@ The `useArrows` hook accepts an optional parameter which is a collection of conf
 |-------------|--------------------------------------------|------------------------------------------------------------|---------------|
 | `selectors` | Array of elements that should receive focus.      | `['a:not([disabled])', 'button:not([disabled])', 'input']` | Array\|String |
 | `useTab`    | Use tab key to traverse focusable elements. | true                                                       | Boolean       |
+| `useNextPrev` | Use right and left arrows to move next and previous. | false                                                       | Boolean       |
 | `loop`      | Loop through focusable elements.           | true                                                       | Boolean       |False    |
 
 ```javascript
