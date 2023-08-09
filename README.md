@@ -42,7 +42,7 @@ export default function App() {
 
 ## Options
 
-The `useArrows` hook accepts an optional parameter which is a collection of configuration props.
+The `useArrows` hook accepts an optional object parameter which is a collection of configuration props.
 
 | Prop          | Description                                | Default                                                    | Type          |
 |-------------  |--------------------------------------------|------------------------------------------------------------|---------------|
