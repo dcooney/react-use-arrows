@@ -41,7 +41,8 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "microbundle watch",
-    "build": "rm -rf dist && microbundle"
+    "build": "rm -rf dist && microbundle",
+    "build:demo": "react-scripts build"
   },
   "keywords": [
     "arrows",
