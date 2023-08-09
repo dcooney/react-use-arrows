@@ -44,12 +44,12 @@ export default function App() {
 
 The `useArrows` hook accepts an optional parameter which is a collection of configuration props.
 
-| Prop        | Description                                | Default                                                    | Type          |
-|-------------|--------------------------------------------|------------------------------------------------------------|---------------|
-| `selectors` | Elements that should receive focus.      | [View Source](https://github.com/dcooney/react-use-arrows/blob/main/src/lib/useArrows.tsx#L4) | `Array\|String` |
-| `useTab`    | Use Tab key will traverse focusable elements. | true                                                       | `Boolean`      |
+| Prop          | Description                                | Default                                                    | Type          |
+|-------------  |--------------------------------------------|------------------------------------------------------------|---------------|
+| `selectors`   | Elements that should receive focus.        | [View Source](https://github.com/dcooney/react-use-arrows/blob/main/src/lib/useArrows.tsx#L4) | `Array\|String` |
+| `useTab`      | Use Tab key will traverse focusable elements. | true                                                       | `Boolean`      |
 | `useNextPrev` | Use right(next) and left(prev) arrows to traverse focusable elements. | false                                                       | `Boolean`       |
-| `loop`      | Loop through focusable elements.           | true                                                       |`Boolean`       |False    |
+| `loop`        | Loop through focusable elements.           | true                                                       |`Boolean`       |False    |
 
 ```javascript
 const ref = useArrowControls( { 
