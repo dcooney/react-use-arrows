@@ -93,6 +93,18 @@ export default function useArrows(
                      )
                   }
                   break
+
+               case 'Home':
+               case 'PageUp': // Home.
+                  event.preventDefault()
+                  setFocus(elements[0])
+                  break
+
+               case 'End':
+               case 'PageDown': // End.
+                  event.preventDefault()
+                  setFocus(elements[elements.length - 1])
+                  break
             }
          }
       }

@@ -15,3 +15,15 @@ code {
    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
 }
+
+.prose {
+   max-width: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+   margin: 0 0 10px;
+   padding: 0;
+}
