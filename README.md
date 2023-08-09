@@ -46,7 +46,7 @@ The `useArrows` hook accepts an optional parameter which is a collection of conf
 
 | Prop        | Description                                | Default                                                    | Type          |
 |-------------|--------------------------------------------|------------------------------------------------------------|---------------|
-| `selectors` | Elements that should receive focus.      | `['a:not([disabled])', 'button:not([disabled])', 'input']` | Array\|String |
+| `selectors` | Elements that should receive focus.      | [View](https://github.com/dcooney/react-use-arrows/blob/main/src/lib/useArrows.tsx#L4) | Array\|String |
 | `useTab`    | Use Tab key will traverse focusable elements. | true                                                       | Boolean       |
 | `useNextPrev` | Use right(next) and left(prev) arrows to traverse focusable elements. | false                                                       | Boolean       |
 | `loop`      | Loop through focusable elements.           | true                                                       | Boolean       |False    |
