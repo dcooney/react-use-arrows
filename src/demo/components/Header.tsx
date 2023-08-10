@@ -11,7 +11,7 @@ export default function Header() {
          </div>
          <a
             href="https://github.com/dcooney/react-use-arrows"
-            className="mt-3 ms:mt-0 inline-flex gap-1 no-underline items-center px-3 py-2.5 rounded-[3px] bg-slate-100 border border-slate-200 leading-none text-sm hover:bg-slate-200 hover:border-slate-300"
+            className="mt-3 ms:mt-0 inline-flex gap-1 no-underline items-center px-3 py-2.5 rounded-[4px] bg-slate-100/75 border border-slate-200 leading-none text-sm hover:bg-slate-200 hover:border-slate-300"
          >
             <svg
                version="1.1"

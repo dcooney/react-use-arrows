@@ -51,9 +51,9 @@ The `useArrows` hook accepts an optional object parameter which is a collection 
 | Prop          | Description                                | Default                                                    | Type          |
 |-------------  |--------------------------------------------|------------------------------------------------------------|---------------|
 | `selectors`   | DOM element selectors that should receive focus.        | [List](https://github.com/dcooney/react-use-arrows/blob/main/src/lib/useArrows.tsx#L4) | `Array\|String` |
-| `useTab`      | Use `Tab` key to navigate focusable elements. | true                                                       | `Boolean`      |
-| `useUpDown`   | Use up and down arrows to navigate focusable elements. | true                                                       | `Boolean`       |
-| `useLeftRight` | Use left and right arrows to navigate focusable elements. | false                                                       | `Boolean`       |
+| `useTab`      | Allow `Tab` key to navigate focusable elements. | true                                                       | `Boolean`      |
+| `useUpDown`   | Up and down arrows navigate focusable elements. | true                                                       | `Boolean`       |
+| `useLeftRight` | Left and right arrows navigate focusable elements. | false                                                       | `Boolean`       |
 | `loop`        | Loop through focusable elements.           | true                                                       |`Boolean`       |False    |
 
 ```javascript

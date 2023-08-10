@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
    return (
-      <footer className="py-5 border-t text-center">
+      <footer className="pt-5 pb-20 border-t text-center">
          <p className="m-0 p-0 pt-2 text-sm flex w-full gap-2 justify-center">
             <span>View Source:</span>
             <a href="https://www.npmjs.com/package/react-use-arrows">

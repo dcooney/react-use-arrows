@@ -63,6 +63,7 @@ export default function useArrows(
          // Set tabindex on all focusable elements.
          elements.forEach((element: HTMLElement, index: number) => {
             if (useTab) {
+               // Ensure all intended elements are tabbable.
                element.tabIndex = 0
             } else {
                // Remove tab index from focusable elements.
@@ -79,50 +80,50 @@ export default function useArrows(
             switch (key) {
                case 'ArrowUp':
                   if (useUpDown) {
-                     event.preventDefault()
                      setFocus(index === 0 && loop ? last : elements[index - 1])
                   }
+                  event.preventDefault()
                   break
 
                case 'ArrowLeft':
                   if (useLeftRight) {
-                     event.preventDefault()
                      setFocus(index === 0 && loop ? last : elements[index - 1])
                   }
+                  event.preventDefault()
                   break
 
                case 'ArrowDown':
                   if (useUpDown) {
-                     event.preventDefault()
                      setFocus(
                         (index === elements.length - 1 || index === -1) && loop
                            ? first
                            : elements[index + 1]
                      )
                   }
+                  event.preventDefault()
                   break
 
                case 'ArrowRight':
                   if (useLeftRight) {
-                     event.preventDefault()
                      setFocus(
                         (index === elements.length - 1 || index === -1) && loop
                            ? first
                            : elements[index + 1]
                      )
                   }
+                  event.preventDefault()
                   break
 
                case 'Home':
                case 'PageUp': // Home.
-                  event.preventDefault()
                   setFocus(elements[0])
+                  event.preventDefault()
                   break
 
                case 'End':
                case 'PageDown': // End.
-                  event.preventDefault()
                   setFocus(elements[elements.length - 1])
+                  event.preventDefault()
                   break
             }
          }
