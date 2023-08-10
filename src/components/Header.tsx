@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Header() {
    return (
-      <header className="py-5 border-b xs:flex w-full justify-between items-center">
+      <header className="py-6 border-b xs:flex w-full justify-between items-center">
          <div>
             <h1 className="mb-0">React Use Arrows</h1>
-            <p className="m-0 p-0 pt-2">
+            <p className="m-0 p-0 pt-1">
                A React hook for traversing DOM elements with keyboard arrows.
             </p>
          </div>

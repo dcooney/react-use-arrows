@@ -17,22 +17,26 @@ yarn add react-use-arrows
 ## Usage
 
 ```javascript
+import React from 'react'
 import useArrows from 'react-use-arrows'
 
 export default function App() {
-   const dropdownRef = useArrows();
+   const menuRef = useArrows();
+
+   // Typescript.
+   // const menuRef = useArrows() as React.RefObject<HTMLDivElement>
 
    return (
-      <div ref={dropdownRef}>
+      <div ref={menuRef}>
          <ul>
             <li>
                <a href="https://github.com/">Github</a>
             </li>
             <li>
-               <a href="https://www.npmjs.com/">NPM</a>
+               <a href="https://npmjs.com/">NPM</a>
             </li>
             <li>
-               <a href="https://www.reactjs.org">React</a>
+               <a href="https://react.dev/">React</a>
             </li>
          </ul>
       </div>
@@ -47,8 +51,9 @@ The `useArrows` hook accepts an optional object parameter which is a collection 
 | Prop          | Description                                | Default                                                    | Type          |
 |-------------  |--------------------------------------------|------------------------------------------------------------|---------------|
 | `selectors`   | DOM element selectors that should receive focus.        | [List](https://github.com/dcooney/react-use-arrows/blob/main/src/lib/useArrows.tsx#L4) | `Array\|String` |
-| `useTab`      | Use Tab key will traverse focusable elements. | true                                                       | `Boolean`      |
-| `useNextPrev` | Use right(next) and left(prev) arrows to traverse focusable elements. | false                                                       | `Boolean`       |
+| `useTab`      | Use `Tab` key to navigate focusable elements. | true                                                       | `Boolean`      |
+| `useUpDown`   | Use up and down arrows to navigate focusable elements. | true                                                       | `Boolean`       |
+| `useLeftRight` | Use left and right arrows to navigate focusable elements. | false                                                       | `Boolean`       |
 | `loop`        | Loop through focusable elements.           | true                                                       |`Boolean`       |False    |
 
 ```javascript

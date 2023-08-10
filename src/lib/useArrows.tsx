@@ -1,12 +1,23 @@
 import {useEffect, useRef} from 'react'
 
 // Default focusable elements.
-const defaults = ['a[href]:not([disabled])', 'button:not([disabled])', 'input']
+const defaults = [
+   'a[href]:not([disabled])',
+   'button:not([disabled])',
+   'input',
+   'textarea',
+   'select',
+   'details',
+   '[tabindex]:not([tabindex="-1"])'
+]
+
+// 'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
 
 interface useArrowsProps {
    selectors?: string
+   useUpDown?: boolean
+   useLeftRight?: boolean
    useTab?: boolean
-   useNextPrev?: boolean
    loop?: boolean
 }
 
@@ -14,12 +25,13 @@ interface useArrowsProps {
  * Detect and handle arrow presses.
  */
 export default function useArrows(
-   props: useArrowsProps
+   props: useArrowsProps | null = null
 ): React.RefObject<HTMLElement> {
    const {
       selectors = defaults,
+      useUpDown = true,
+      useLeftRight = false,
       useTab = true,
-      useNextPrev = false,
       loop = true
    } = props || {}
    const ref = useRef<HTMLElement>(null)
@@ -48,12 +60,15 @@ export default function useArrows(
             return // Exit if no focusable elements.
          }
 
-         // Remove tab index from focusable elements.
-         if (elements && !useTab) {
-            elements.forEach((element: HTMLElement, index: number) => {
+         // Set tabindex on all focusable elements.
+         elements.forEach((element: HTMLElement, index: number) => {
+            if (useTab) {
+               element.tabIndex = 0
+            } else {
+               // Remove tab index from focusable elements.
                element.tabIndex = index > 0 ? -1 : 0
-            })
-         }
+            }
+         })
 
          // If active element is in the container.
          if (activeElement && container.contains(activeElement)) {
@@ -63,28 +78,32 @@ export default function useArrows(
 
             switch (key) {
                case 'ArrowUp':
-                  event.preventDefault()
-                  setFocus(index === 0 && loop ? last : elements[index - 1])
+                  if (useUpDown) {
+                     event.preventDefault()
+                     setFocus(index === 0 && loop ? last : elements[index - 1])
+                  }
                   break
 
                case 'ArrowLeft':
-                  if (useNextPrev) {
+                  if (useLeftRight) {
                      event.preventDefault()
                      setFocus(index === 0 && loop ? last : elements[index - 1])
                   }
                   break
 
                case 'ArrowDown':
-                  event.preventDefault()
-                  setFocus(
-                     (index === elements.length - 1 || index === -1) && loop
-                        ? first
-                        : elements[index + 1]
-                  )
+                  if (useUpDown) {
+                     event.preventDefault()
+                     setFocus(
+                        (index === elements.length - 1 || index === -1) && loop
+                           ? first
+                           : elements[index + 1]
+                     )
+                  }
                   break
 
                case 'ArrowRight':
-                  if (useNextPrev) {
+                  if (useLeftRight) {
                      event.preventDefault()
                      setFocus(
                         (index === elements.length - 1 || index === -1) && loop
