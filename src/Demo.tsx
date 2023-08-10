@@ -12,7 +12,7 @@ export default function App() {
       <div className="container">
          <div className="prose w-full">
             <Header />
-            <div className="py-10 grid grid-cols-2 gap-10 items-start">
+            <div className="py-10 grid sm:grid-cols-2 gap-10 items-start">
                <Basic />
                <Dropdown />
                <Mixed />
