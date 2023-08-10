@@ -10,8 +10,8 @@ export default function Basic() {
          <h2 className="m-0">Basic Example</h2>
          <p className="text-sm m-0 mb-2 p-0">
             Tab into the button group and use your <ArrowKey dir="up" /> and{' '}
-            <ArrowKey dir="down" /> arrow keys to move through the items in the
-            list.
+            <ArrowKey dir="down" /> arrow keys to move through the buttons in
+            the list.
          </p>
          <button className="btn">Button One</button>
          <button className="btn btn-primary">Button Two</button>
