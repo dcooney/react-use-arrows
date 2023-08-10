@@ -4,6 +4,8 @@ import ArrowKey from '../components/ArrowKey'
 
 export default function Dropdown() {
    const [active, setActive] = useState(false)
+   const btnClass =
+      'no-underline focus:underline inline-block py-1.5 px-2 focus:bg-white hover:bg-white border border-transparent focus:border-slate-100 hover:border-slate-100'
 
    const ref = useArrows({
       useLeftRight: false,
@@ -11,12 +13,38 @@ export default function Dropdown() {
       useTab: false
    }) as React.RefObject<HTMLUListElement>
 
+   /**
+    * Handle keyboard controls.
+    *
+    * @param {Event} event The click event.
+    */
+   function handleEsc(event: KeyboardEvent) {
+      const {key} = event
+      switch (key) {
+         // Exit if esc and no focusable elements.
+         case 'Esc':
+         case 'Escape': // Escape
+            setActive(false)
+            break
+
+         default:
+            break
+      }
+   }
+
    useEffect(() => {
       if (active) {
          // Set focus on first dropdown item.
          ref.current?.querySelector('a')?.focus()
       }
    }, [active])
+
+   useEffect(() => {
+      document.addEventListener('keydown', handleEsc)
+      return () => {
+         document.removeEventListener('keydown', handleEsc)
+      }
+   }, [])
 
    return (
       <div className="grid gap-2.5">
@@ -38,25 +66,39 @@ export default function Dropdown() {
                   <h3 className="p-0 pb-2 border-b m-0 mb-2">Other Projects</h3>
                   <ul ref={ref} className="list-none p-0 pt-1 m-0">
                      <li>
-                        <a href="https://connekthq.com">Connekt Media</a>
+                        <a href="https://connekthq.com" className={btnClass}>
+                           Connekt Media
+                        </a>
                      </li>
                      <li>
-                        <a href="https://connekthq.com/plugins/ajax-load-more/">
+                        <a
+                           href="https://connekthq.com/plugins/ajax-load-more/"
+                           className={btnClass}
+                        >
                            Ajax Load More
                         </a>
                      </li>
                      <li>
-                        <a href="https://getinstantimages.com">
+                        <a
+                           href="https://getinstantimages.com"
+                           className={btnClass}
+                        >
                            Instant Images
                         </a>
                      </li>
                      <li>
-                        <a href="https://dcooney.github.io/react-a11y-dropdown/">
+                        <a
+                           href="https://dcooney.github.io/react-a11y-dropdown/"
+                           className={btnClass}
+                        >
                            React A11y Dropdown
                         </a>
                      </li>
                      <li>
-                        <a href="https://dcooney.github.io/react-a11y-dropdown/">
+                        <a
+                           href="https://dcooney.github.io/react-a11y-dropdown/"
+                           className={btnClass}
+                        >
                            React A11y Dropdown
                         </a>
                      </li>

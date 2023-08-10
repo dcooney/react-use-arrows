@@ -6,7 +6,6 @@ export default function Pagination() {
    const ref = useArrows({
       useUpDown: false,
       useLeftRight: true,
-      useTab: false,
       loop: false
    }) as React.RefObject<HTMLDivElement>
 
@@ -41,7 +40,7 @@ export default function Pagination() {
          </div>
          <p className="text-xs m-0 mt-4 text-slate-500 py-0 px-2">
             <strong>Note</strong>: <ArrowKey dir="up" /> <ArrowKey dir="down" />{' '}
-            arrows, looping and tab support have been disabled in this example.
+            arrows and looping have been disabled in this example.
          </p>
       </>
    )

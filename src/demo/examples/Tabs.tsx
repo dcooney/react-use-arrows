@@ -6,6 +6,7 @@ export default function Tabs() {
       selectors: 'span[role="button"]',
       useUpDown: true,
       useLeftRight: true,
+      useTab: false,
       loop: false
    }) as React.RefObject<HTMLDivElement>
 
@@ -20,7 +21,11 @@ export default function Tabs() {
             <span role="button" className="tab tab-lg tab-lifted">
                Tab #1
             </span>
-            <span role="button" className="tab tab-lg tab-lifted tab-active">
+            <span
+               role="button"
+               className="tab tab-lg tab-lifted tab-active"
+               tabIndex={0}
+            >
                Tab #2
             </span>
             <span role="button" className="tab tab-lg tab-lifted">
@@ -31,7 +36,8 @@ export default function Tabs() {
             </span>
          </div>
          <p className="text-xs m-0 mt-4 text-slate-500 py-0 px-2">
-            <strong>Note</strong>: Looping has been disabled in this example.
+            <strong>Note</strong>: Looping and tab key support has been disabled
+            in this example.
          </p>
       </>
    )

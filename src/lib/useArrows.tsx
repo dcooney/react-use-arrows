@@ -61,13 +61,15 @@ export default function useArrows(
          }
 
          // Set tabindex on all focusable elements.
-         elements.forEach((element: HTMLElement, index: number) => {
+         elements.forEach((element: HTMLElement) => {
             if (useTab) {
                // Ensure all intended elements are tabbable.
                element.tabIndex = 0
             } else {
                // Remove tab index from focusable elements.
-               element.tabIndex = index > 0 ? -1 : 0
+               if (!element.hasAttribute('tabindex')) {
+                  element.tabIndex = -1
+               }
             }
          })
 
