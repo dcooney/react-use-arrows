@@ -78,7 +78,7 @@ export default function useArrows(
             const index = [...elements].indexOf(activeElement)
 
             /**
-             * Prevent focus from jumping if current focus is not in the element array.
+             * Prevent focus from jumping if the current focus is not in the element array.
              *
              * This will help prevent focus from jumping to the next focusable element
              * when using keydown event on external DOM element.
