@@ -15,10 +15,24 @@ export default function Dropdown() {
 
    /**
     * Handle keyboard controls.
-    *
-    * @param {Event} event The click event.
     */
-   function handleEsc(event: KeyboardEvent) {
+   function handleKeydown(event: any) {
+      const {key} = event
+      switch (key) {
+         case 'ArrowDown':
+            setActive(true)
+            event.preventDefault()
+            break
+
+         default:
+            break
+      }
+   }
+
+   /**
+    * Handle keyboard controls.
+    */
+   function handleEsc(event: any) {
       const {key} = event
       switch (key) {
          // Exit if esc and no focusable elements.
@@ -35,7 +49,8 @@ export default function Dropdown() {
    useEffect(() => {
       if (active) {
          // Set focus on first dropdown item.
-         ref.current?.querySelector('a')?.focus()
+         const element = ref.current?.querySelector('a') as HTMLElement
+         element?.focus()
       }
    }, [active])
 
@@ -58,6 +73,7 @@ export default function Dropdown() {
             <button
                className="btn btn-neutral"
                onClick={() => setActive(!active)}
+               onKeyDown={(e) => handleKeydown(e)}
             >
                Toggle Menu
             </button>
@@ -81,7 +97,7 @@ export default function Dropdown() {
                      <li>
                         <a
                            href="https://getinstantimages.com"
-                           className={btnClass}
+                           className={`${btnClass} test`}
                         >
                            Instant Images
                         </a>
@@ -96,10 +112,10 @@ export default function Dropdown() {
                      </li>
                      <li>
                         <a
-                           href="https://dcooney.github.io/react-a11y-dropdown/"
+                           href="https://dcooney.github.io/react-npm-starter/"
                            className={btnClass}
                         >
-                           React A11y Dropdown
+                           React NPM Starter
                         </a>
                      </li>
                   </ul>
