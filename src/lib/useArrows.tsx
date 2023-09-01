@@ -11,8 +11,6 @@ const defaults = [
    '[tabindex]:not([tabindex="-1"])'
 ]
 
-// 'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-
 interface useArrowsProps {
    selectors?: string
    useUpDown?: boolean
@@ -79,6 +77,17 @@ export default function useArrows(
             const last = elements[elements.length - 1]
             const index = [...elements].indexOf(activeElement)
 
+            /**
+             * Prevent focus from jumping if the current focus is not in the element array.
+             *
+             * This will help prevent focus from jumping to the next focusable element
+             * when using keydown event on external DOM element.
+             */
+            if (elements.indexOf(event?.target) === -1) {
+               return
+            }
+
+            // Switch focus based on key pressed.
             switch (key) {
                case 'ArrowUp':
                   if (useUpDown) {
@@ -137,7 +146,7 @@ export default function useArrows(
          // Dispose of event listener on unmount.
          document.removeEventListener('keydown', arrowHandler, false)
       }
-   }, [])
+   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
    return ref
 }

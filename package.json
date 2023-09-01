@@ -1,6 +1,6 @@
 {
   "name": "react-use-arrows",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React hook for traversing DOM elements with keyboard arrows.",
   "homepage": "https://dcooney.github.io/react-use-arrows/",
   "source": "src/lib/useArrows.tsx",
@@ -44,7 +44,7 @@
     "start": "react-scripts start",
     "dev": "microbundle watch",
     "build": "rm -rf dist && microbundle",
-    "build:demo": "BUILD_PATH='./docs' react-scripts build"
+    "build:docs": "BUILD_PATH='./docs' react-scripts build"
   },
   "keywords": [
     "arrows",
