@@ -57,7 +57,7 @@ The `useArrows` hook accepts an optional object parameter which is a collection 
 | `loop`        | Loop through focusable elements.           | true                                                       |`Boolean`       |False    |
 
 ```javascript
-const ref = useArrowControls( { 
-   selectors: 'span[role="button"]',
+const ref = useArrows( { 
+   selectors: ['li[role="button"]', 'button'],
    useTab: false,
 });

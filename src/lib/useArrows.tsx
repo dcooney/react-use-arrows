@@ -12,7 +12,7 @@ const defaults = [
 ]
 
 interface useArrowsProps {
-   selectors?: string
+   selectors?: string | string[]
    useUpDown?: boolean
    useLeftRight?: boolean
    useTab?: boolean

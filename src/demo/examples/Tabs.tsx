@@ -3,7 +3,7 @@ import useArrows from '../../lib/useArrows'
 
 export default function Tabs() {
    const ref = useArrows({
-      selectors: 'span[role="button"]',
+      selectors: ['span[role="button"]'],
       useUpDown: true,
       useLeftRight: true,
       useTab: false,
