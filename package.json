@@ -1,6 +1,6 @@
 {
   "name": "react-use-arrows",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React hook for traversing DOM elements with keyboard arrows.",
   "homepage": "https://dcooney.github.io/react-use-arrows/",
   "source": "src/lib/useArrows.tsx",

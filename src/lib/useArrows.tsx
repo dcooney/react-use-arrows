@@ -41,6 +41,8 @@ export default function useArrows(
       function arrowHandler(event: KeyboardEvent) {
          const {key} = event
          const activeElement = document ? document.activeElement : null // eslint-disable-line
+         const {tagName = ''} = activeElement
+         const excludedTags = ['input', 'textarea', 'select']
 
          const container: HTMLElement | null = ref?.current
          if (!container) {
@@ -100,7 +102,10 @@ export default function useArrows(
                   if (useLeftRight) {
                      setFocus(index === 0 && loop ? last : elements[index - 1])
                   }
-                  event.preventDefault()
+                  // Allow arrow key navigation on input fields.
+                  if (!excludedTags.includes(tagName?.toLowerCase())) {
+                     event.preventDefault()
+                  }
                   break
 
                case 'ArrowDown':
@@ -122,7 +127,10 @@ export default function useArrows(
                            : elements[index + 1]
                      )
                   }
-                  event.preventDefault()
+                  // Allow arrow key navigation on input fields.
+                  if (!excludedTags.includes(tagName?.toLowerCase())) {
+                     event.preventDefault()
+                  }
                   break
 
                case 'Home':
